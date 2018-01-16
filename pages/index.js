@@ -2,6 +2,7 @@ import React from 'react'
 import injectSheet from 'react-jss'
 import withRedux from 'next-redux-wrapper'
 import makeStore from '../store'
+import withRoot from '../components/withRoot'
 
 // Actions
 import {getQuestions} from '../actions/questions'
@@ -56,4 +57,4 @@ const mapStateToProps = state => {
   return {...state}
 }
 
-export default withRedux(makeStore, mapStateToProps, mapDispatchToProps)(FrontPage)
+export default withRedux(makeStore, mapStateToProps, mapDispatchToProps)(withRoot()(FrontPage))
