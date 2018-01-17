@@ -34,7 +34,7 @@ export default class MainDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <title>React True or False</title>
+          <title>React Trivia  Game</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
           <style>{`body{margin: 0;}`}</style>
