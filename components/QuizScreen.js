@@ -6,18 +6,6 @@ import Typography from 'material-ui/Typography'
 import Button from 'material-ui/Button'
 import Paper from 'material-ui/Paper'
 
-{/* <div>
-<h1>{question.category}</h1>
-<h4>{this.htmlDecode(question.question)}</h4>
-<button
-  onClick={e => this.onClick(e.currentTarget.dataset.val, question.correct_answer)}
-  data-val="True"
-  >true</button>
-<button
-  onClick={e => this.onClick(e.currentTarget.dataset.val, question.correct_answer)}
-  data-val="False">false</button>
-</div> */}
-
 const styles = {
   column: {
     textAlign: 'center',

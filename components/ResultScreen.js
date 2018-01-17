@@ -38,15 +38,15 @@ class ResultScreen extends React.Component {
             <Typography type="headline">{correctQuestionIds.length} / {items.length}</Typography>
           </Grid>
           <Grid item xs={12}>
-          {items.map((question, i) => {
-              return (
-                <ExpansionPanel>
-                  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography type="title">{this.htmlDecode(question.question)}</Typography>
-                  </ExpansionPanelSummary>
-                </ExpansionPanel>
-              )
-          })}
+            {items.map((question, i) => {
+                return (
+                  <ExpansionPanel>
+                    <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                      <Typography type="title">{this.htmlDecode(question.question)}</Typography>
+                    </ExpansionPanelSummary>
+                  </ExpansionPanel>
+                )
+            })}
           </Grid>
           <Grid item xs={12}>
             <Button
