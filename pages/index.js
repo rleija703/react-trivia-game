@@ -33,7 +33,6 @@ class FrontPage extends React.Component {
 
   render() {
     const {game, questions} = this.props
-    console.log(game)
     if (game.state === 'PLAY' && game.currentQuestion < 10 && questions.items.length) {
       return <QuizScreen
         handleSubmit={this.handleSubmit.bind(this)}
@@ -46,6 +45,8 @@ class FrontPage extends React.Component {
   }
 }
 
+FrontPage = withRoot(FrontPage)
+
 const mapDispatchToProps = (dispatch) => {
   return {
     dispatch,
@@ -57,4 +58,4 @@ const mapStateToProps = state => {
   return {...state}
 }
 
-export default withRedux(makeStore, mapStateToProps, mapDispatchToProps)(withRoot()(FrontPage))
+export default withRedux(makeStore, mapStateToProps, mapDispatchToProps)(FrontPage)

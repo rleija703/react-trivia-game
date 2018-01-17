@@ -5,15 +5,15 @@ import { pink, grey } from 'material-ui/colors'
 
 const theme = createMuiTheme({
   palette: {
-    type:'dark',
-    primary: {
-      ...grey,
-      '500': '#303030'
-    },
-    secondary: {
-      ...pink,
-      '500': '#e91e63'
-    }
+    type:'light',
+    // primary: {
+    //   ...grey,
+    //   '500': '#303030'
+    // },
+    // secondary: {
+    //   ...pink,
+    //   '500': '#e91e63'
+    // }
   },
 });
 
