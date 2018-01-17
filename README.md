@@ -1,5 +1,7 @@
 # React Trivia Question Game
 
+Demo: https://react-trivia-game.now.sh/
+
 ## Installation
 
 1. Clone repo

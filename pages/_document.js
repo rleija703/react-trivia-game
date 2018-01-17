@@ -39,7 +39,7 @@ export default class MainDocument extends Document {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
           <style>{`body{margin: 0;}`}</style>
         </Head>
-        <body className="front-page">
+        <body>
           <Main />
           <NextScript />
         </body>

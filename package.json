@@ -1,11 +1,13 @@
 {
   "name": "trivia-game",
   "scripts": {
-    "dev": "next"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
-    "material-ui": "1.0.0-beta.25",
+    "material-ui": "^1.0.0-beta.29",
     "material-ui-icons": "^1.0.0-beta.17",
     "next": "^4.2.3",
     "next-redux-wrapper": "^1.3.5",
