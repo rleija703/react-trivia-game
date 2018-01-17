@@ -12,6 +12,9 @@ const styles = {
     maxWidth: '90%',
     margin: 'auto'
   },
+  questionTracker: {
+    marginTop: 15
+  }
 }
 
 class QuizScreen extends React.Component {
@@ -28,7 +31,7 @@ class QuizScreen extends React.Component {
   }
 
   render() {
-    const {question, classes} = this.props
+    const {question, classes, currentQuestionId} = this.props
     return(
       <Paper className={`main-paper`}>
         <Grid
@@ -40,6 +43,7 @@ class QuizScreen extends React.Component {
           </Grid>
           <Grid item xs={12} className={classes.column}>
             <Typography type="title">{this.htmlDecode(question.question)}</Typography>
+            <Typography className={classes.questionTracker} type="body1">{currentQuestionId + 1} of 10</Typography>
           </Grid>
           <Grid item xs={12} className={classes.column}>
             <Button

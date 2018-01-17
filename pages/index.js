@@ -35,6 +35,7 @@ class FrontPage extends React.Component {
     const {game, questions} = this.props
     if (game.state === 'PLAY' && game.currentQuestion < 10 && questions.items.length) {
       return <QuizScreen
+        currentQuestionId={game.currentQuestion}
         handleSubmit={this.handleSubmit.bind(this)}
         question={questions.items[game.currentQuestion]}/>
     } else if (game.state === 'PLAY' && game.currentQuestion > 9) {
