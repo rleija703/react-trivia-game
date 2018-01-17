@@ -1,20 +1,11 @@
-import { create, SheetsRegistry } from 'jss';
-import preset from 'jss-preset-default';
-import { createMuiTheme, createGenerateClassName } from 'material-ui/styles';
-import { pink, grey } from 'material-ui/colors'
+import { create, SheetsRegistry } from 'jss'
+import preset from 'jss-preset-default'
+import { createMuiTheme, createGenerateClassName } from 'material-ui/styles'
 
 const theme = createMuiTheme({
   palette: {
     type:'light',
-    // primary: {
-    //   ...grey,
-    //   '500': '#303030'
-    // },
-    // secondary: {
-    //   ...pink,
-    //   '500': '#e91e63'
-    // }
-  },
+  }
 });
 
 // Configure JSS

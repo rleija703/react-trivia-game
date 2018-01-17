@@ -1,4 +1,16 @@
 import React from 'react'
+import { withStyles } from 'material-ui/styles'
+import Grid from 'material-ui/Grid'
+import Typography from 'material-ui/Typography'
+import Button from 'material-ui/Button'
+import Paper from 'material-ui/Paper'
+import ExpansionPanel, {
+  ExpansionPanelSummary,
+  ExpansionPanelDetails,
+} from 'material-ui/ExpansionPanel'
+import ExpandMoreIcon from 'material-ui-icons/ExpandMore'
+
+const styles = {}
 
 class ResultScreen extends React.Component {
 
@@ -16,21 +28,36 @@ class ResultScreen extends React.Component {
   render() {
     const {correctQuestionIds, items} = this.props
     return(
-      <div>
-        <h1>You scored</h1>
-        <h1>{correctQuestionIds.length} / {items.length}</h1>
-        <div>
+      <Paper className={`main-paper`}>
+        <Grid
+          container
+          style={{height: '100%'}}
+          justify='space-between'>
+          <Grid item xs={12}>
+            <Typography type="headline">You scored</Typography>
+            <Typography type="headline">{correctQuestionIds.length} / {items.length}</Typography>
+          </Grid>
+          <Grid item xs={12}>
           {items.map((question, i) => {
-            return (
-              <div>
-                <h3>{this.htmlDecode(question.question)}</h3>
-              </div>
-            )
+              return (
+                <ExpansionPanel>
+                  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography type="title">{this.htmlDecode(question.question)}</Typography>
+                  </ExpansionPanelSummary>
+                </ExpansionPanel>
+              )
           })}
-        </div>
-        <button onClick={this.handleClick.bind(this)}>Play again?</button>
-      </div>
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              fullWidth
+              onClick={this.handleClick.bind(this)}>
+              Play again?
+            </Button>
+          </Grid>
+        </Grid>
+      </Paper>
     )
   }
 }
-export default ResultScreen
+export default withStyles(styles)(ResultScreen)

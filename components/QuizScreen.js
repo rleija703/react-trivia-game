@@ -1,5 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { withStyles } from 'material-ui/styles'
+import Grid from 'material-ui/Grid'
+import Typography from 'material-ui/Typography'
+import Button from 'material-ui/Button'
+import Paper from 'material-ui/Paper'
+
+{/* <div>
+<h1>{question.category}</h1>
+<h4>{this.htmlDecode(question.question)}</h4>
+<button
+  onClick={e => this.onClick(e.currentTarget.dataset.val, question.correct_answer)}
+  data-val="True"
+  >true</button>
+<button
+  onClick={e => this.onClick(e.currentTarget.dataset.val, question.correct_answer)}
+  data-val="False">false</button>
+</div> */}
+
+const styles = {
+  column: {
+    textAlign: 'center',
+    maxWidth: '90%',
+    margin: 'auto'
+  },
+}
 
 class QuizScreen extends React.Component {
 
@@ -15,19 +40,35 @@ class QuizScreen extends React.Component {
   }
 
   render() {
-    const {question} = this.props
+    const {question, classes} = this.props
     return(
-      <div>
-        <h1>{question.category}</h1>
-        <h4>{this.htmlDecode(question.question)}</h4>
-        <button
-          onClick={e => this.onClick(e.currentTarget.dataset.val, question.correct_answer)}
-          data-val="True"
-          >true</button>
-        <button
-          onClick={e => this.onClick(e.currentTarget.dataset.val, question.correct_answer)}
-          data-val="False">false</button>
-      </div>
+      <Paper className={`main-paper`}>
+        <Grid
+          container
+          style={{height: '100%'}}
+          justify='space-between'>
+          <Grid item xs={12} className={classes.column}>
+            <Typography type="headline">{question.category}</Typography>
+          </Grid>
+          <Grid item xs={12} className={classes.column}>
+            <Typography type="title">{this.htmlDecode(question.question)}</Typography>
+          </Grid>
+          <Grid item xs={12} className={classes.column}>
+            <Button
+              style={{float: 'left'}}
+              onClick={e => this.onClick(e.currentTarget.dataset.val, question.correct_answer)}
+              data-val="True">
+              True
+            </Button>
+            <Button
+              style={{float: 'right'}}
+              onClick={e => this.onClick(e.currentTarget.dataset.val, question.correct_answer)}
+              data-val="False">
+              False
+            </Button>
+          </Grid>
+        </Grid>
+      </Paper>
     )
   }
 }
@@ -36,4 +77,4 @@ QuizScreen.propTypes = {
   question: PropTypes.object
 }
 
-export default QuizScreen
+export default withStyles(styles)(QuizScreen)

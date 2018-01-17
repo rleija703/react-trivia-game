@@ -34,10 +34,10 @@ export default class MainDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <title>Excuse Me</title>
+          <title>React True or False</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
-          <style>{`body{margin: 0; background-color: #303030;}`}</style>
+          <style>{`body{margin: 0;}`}</style>
         </Head>
         <body className="front-page">
           <Main />

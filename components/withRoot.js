@@ -8,12 +8,29 @@ const styles = theme => ({
   '@global': {
     html: {
       background: theme.palette.background.default,
-      WebkitFontSmoothing: 'antialiased', // Antialiasing.
-      MozOsxFontSmoothing: 'grayscale', // Antialiasing.
+      WebkitFontSmoothing: 'antialiased',
+      MozOsxFontSmoothing: 'grayscale',
+      height: '100%'
     },
     body: {
       margin: 0,
+      height: '100%',
+      '& > div' : {
+        height: '100%'
+      }
     },
+    '#__next': {
+      height: '100%',
+      '& > div' : {
+        height: '100%'
+      }
+    },
+    '.main-paper': {
+      width: '90%',
+      height: 660,
+      maxWidth: 375,
+      margin: '60px auto',
+    }
   },
 });
 
